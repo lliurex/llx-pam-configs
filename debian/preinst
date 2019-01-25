@@ -1,0 +1,17 @@
+#! /bin/sh -e
+
+#edited in rules file
+DIVERT_LIST="ldap pam_script"
+
+for FILE_NAME in $DIVERT_LIST;do
+
+	#echo "dpkg-divert --package llx-pam-configs --add --rename --divert /usr/lib/mime/packages/$FILE_NAME.diverted /usr/share/lliurex-mime-settings/diverted/$FILE_NAME"
+	mkdir -p /usr/share/llx-pam-configs/diverted/
+	dpkg-divert --package llx-pam-configs --add --rename --divert /usr/share/llx-pam-configs/diverted/$FILE_NAME.diverted /usr/share/pam-configs/$FILE_NAME
+
+done;
+
+
+#DEBHELPER#
+
+exit 0

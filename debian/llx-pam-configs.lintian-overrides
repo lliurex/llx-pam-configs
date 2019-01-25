@@ -1,0 +1,2 @@
+llx-pam-configs: remove-of-unknown-diversion usr/share/llx-pam-configs/* postrm:13
+llx-pam-configs: orphaned-diversion usr/share/pam-configs/* preinst

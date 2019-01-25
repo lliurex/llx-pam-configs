@@ -1,0 +1,13 @@
+Source: llx-pam-configs
+Section: admin
+Priority: extra
+Maintainer: Equipo LliureX <lliurex@gva.es>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.7
+Homepage: http://www.lliurex.net
+
+Package: llx-pam-configs
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpam-ldap, libpam-modules
+Description: Lliurex pam-configs confiugrations
+ Lliurex pam-configs custom confiugrations
