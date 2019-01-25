@@ -1,0 +1,15 @@
+Name: LDAP Authentication
+Default: yes
+Priority: 300
+Auth-Type: Primary
+Auth-Initial:
+        [success=end default=ignore]    pam_ldap.so
+Auth:
+        [success=end default=ignore]    pam_ldap.so use_first_pass
+Account-Type: Primary
+Account:
+        [success=end default=ignore]    pam_ldap.so
+Session-Type: Additional
+Session:
+        optional                        pam_ldap.so
+	optional			pam_mkhomedir.so
