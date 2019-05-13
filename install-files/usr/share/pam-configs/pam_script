@@ -1,9 +1,0 @@
-Name: Support for authentication by external scripts
-Default: yes
-Priority: 257
-Account-Type: Primary
-Account:
-       optional                      pam_script.so
-Session-Type: Additional
-Session:
-       optional                        pam_script.so
