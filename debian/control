@@ -9,5 +9,7 @@ Homepage: http://www.lliurex.net
 Package: llx-pam-configs
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, libpam-ldap, libpam-modules
+Conflicts: lightdm-running, lightdm-classroom
+Replaces: lightdm-running, lightdm-classroom
 Description: Lliurex pam-configs confiugrations
  Lliurex pam-configs custom confiugrations
