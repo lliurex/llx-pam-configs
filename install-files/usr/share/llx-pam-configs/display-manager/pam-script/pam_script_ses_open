@@ -1,0 +1,13 @@
+#!/bin/sh
+
+USER="$PAM_USER"
+HOME="/home/$USER"
+
+export USER
+export HOME
+
+RUN_DIR="/usr/share/llx-pam-configs/display-manager/session.d/"
+
+run-parts $RUN_DIR
+
+exit 0
