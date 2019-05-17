@@ -2,17 +2,14 @@
 
 #edited in rules file
 
-DIVERT_LIST="ldap sddm"
 
 if [ remove = "$1" -o abort-install = "$1" -o disappear = "$1" ];then
 
-	for FILE_NAME in $DIVERT_LIST;do
-
-		if [ -e FILE_NAME ];then
-			rm -rf /usr/share/pam-configs/$FILE_NAME || true
-			dpkg-divert --package llx-pam-configs --remove --rename --divert /usr/share/llx-pam-configs/diverted/$FILE_NAME.diverted /usr/share/llx-pam-configs/$FILE_NAME
-		fi
-	done;
+		rm -rf /usr/share/pam-configs/ldap || true
+		dpkg-divert --package llx-pam-configs --remove --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/llx-pam-configs/ldap
+		
+		rm -rf /etc/pam.d/sddm || true
+		dpkg-divert --package llx-pam-configs --remove --rename --divert /usr/share/llx-pam-configs/diverted/sddm.diverted /etc/pam.d/sddm
 
 fi;
 

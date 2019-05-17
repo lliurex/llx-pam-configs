@@ -3,13 +3,35 @@
 #edited in rules file
 DIVERT_LIST="ldap sddm"
 
-for FILE_NAME in $DIVERT_LIST;do
+case "$1" in
+    install|upgrade)
 
-	#echo "dpkg-divert --package llx-pam-configs --add --rename --divert /usr/lib/mime/packages/$FILE_NAME.diverted /usr/share/lliurex-mime-settings/diverted/$FILE_NAME"
-	mkdir -p /usr/share/llx-pam-configs/diverted/
-	dpkg-divert --package llx-pam-configs --add --rename --divert /usr/share/llx-pam-configs/diverted/$FILE_NAME.diverted /usr/share/pam-configs/$FILE_NAME
+	if [ ! -d /usr/share/llx-pam-configs/diverted/ ]; then
+		mkdir -p /usr/share/llx-pam-configs/diverted/ || true
+	fi
 
-done;
+	if [ ! -e /usr/share/llx-pam-configs/diverted/ldap.diverted  ]; then
+		dpkg-divert --package llx-pam-configs --add --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/pam-configs/ldap
+	fi
+	
+	if [ ! -e /usr/share/llx-pam-configs/diverted/sddm.diverted  ]; then
+                dpkg-divert --package llx-pam-configs --add --rename --divert /usr/share/llx-pam-configs/diverted/sddm.diverted /etc/pam.d/sddm
+        fi
+
+
+    ;;
+
+    abort-upgrade)
+    ;;
+
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+
+
 
 
 #DEBHELPER#
