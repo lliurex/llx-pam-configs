@@ -2,7 +2,7 @@
 
 #edited in rules file
 
-DIVERT_LIST="ldap pam_script"
+DIVERT_LIST="ldap sddm"
 
 if [ remove = "$1" -o abort-install = "$1" -o disappear = "$1" ];then
 
