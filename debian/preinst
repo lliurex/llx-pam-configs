@@ -1,7 +1,6 @@
 #! /bin/sh -e
 
 #edited in rules file
-DIVERT_LIST="ldap sddm"
 
 case "$1" in
     install|upgrade)
@@ -13,6 +12,11 @@ case "$1" in
 	if [ ! -e /usr/share/llx-pam-configs/diverted/ldap.diverted  ]; then
 		dpkg-divert --package llx-pam-configs --add --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/pam-configs/ldap
 	fi
+
+	if [ ! -e /usr/share/llx-pam-configs/diverted/pam_script.diverted  ]; then
+                dpkg-divert --package llx-pam-configs --add --rename --divert /usr/share/llx-pam-configs/diverted/pam_script.diverted /usr/share/pam-configs/pam_script
+        fi
+
 	
 	if [ ! -e /usr/share/llx-pam-configs/diverted/sddm.diverted  ]; then
                 dpkg-divert --package llx-pam-configs --add --rename --divert /usr/share/llx-pam-configs/diverted/sddm.diverted /etc/pam.d/sddm
