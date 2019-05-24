@@ -1,3 +1,9 @@
+llx-pam-configs (0.4-1) bionic; urgency=medium
+
+  * Fixed missing deendency
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Fri, 24 May 2019 11:58:43 +0200
+
 llx-pam-configs (0.4) bionic; urgency=high
 
   * Restored pam_script diversion
