@@ -12,7 +12,7 @@ case "$1" in
 	echo "------------------------------------------ $x ---------------------------"
 	if [ "$x" = "llx-pam-configs" ]; then
 		rm -rf /usr/share/pam-configs/ldap || true
-		dpkg-divert --package llx-pam-configs-ldap --remove --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/pam-configs/ldap
+		dpkg-divert --package llx-pam-configs --remove --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/pam-configs/ldap
 	
 	fi
 
