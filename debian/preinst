@@ -9,7 +9,6 @@ case "$1" in
 		mkdir -p /usr/share/llx-pam-configs/diverted/ || true
 	fi
 	x="$(dpkg-divert --listpackage /usr/share/pam-configs/ldap)"
-	echo "------------------------------------------ $x ---------------------------"
 	if [ "$x" = "llx-pam-configs" ]; then
 		rm -rf /usr/share/pam-configs/ldap || true
 		dpkg-divert --package llx-pam-configs --remove --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/pam-configs/ldap

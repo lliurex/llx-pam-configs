@@ -3,7 +3,8 @@ Upstream-Name: llx-pam-configs
 Source: http://svn.lliurex.net/pandora/llx-pam-configs
 
 Files: *
-Copyright: 2012 Hector Garcia Huerta <lliurex_devel1@edu.gva.es>
+Copyright: 2012 Hector Garcia Huerta <hectorgh@gmail.com>
+	   2022 Raul Rodrigo Segura <raurodse@gmail.com>
 License: GPL-3.0+
 
 License: GPL-3.0+
