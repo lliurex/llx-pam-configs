@@ -1,3 +1,9 @@
+llx-pam-configs (0.6.1) focal; urgency=medium
+
+  * Fix install files
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Tue, 29 Nov 2022 11:44:52 +0100
+
 llx-pam-configs (0.6) focal; urgency=medium
 
   * Split package
