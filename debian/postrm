@@ -6,9 +6,6 @@
 if [ remove = "$1" -o abort-install = "$1" -o disappear = "$1" ];then
 
 		rm -rf /usr/share/pam-configs/ldap || true
-		dpkg-divert --package llx-pam-configs --remove --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/llx-pam-configs/ldap
-
-		rm -rf /usr/share/pam-configs/ldap || true
                 dpkg-divert --package llx-pam-configs --remove --rename --divert /usr/share/llx-pam-configs/diverted/pam_script.diverted /usr/share/llx-pam-configs/pam_script
 		
 		rm -rf /etc/pam.d/sddm || true

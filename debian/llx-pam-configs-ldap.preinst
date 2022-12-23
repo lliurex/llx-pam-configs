@@ -1,0 +1,28 @@
+#! /bin/sh -e
+
+#edited in rules file
+
+case "$1" in
+    install|upgrade)
+
+	if [ ! -e /usr/share/llx-pam-configs/diverted/ldap.diverted  ]; then
+		dpkg-divert --package llx-pam-configs-ldap --add --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/pam-configs/ldap
+	fi
+    ;;
+
+    abort-upgrade)
+    ;;
+
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+
+
+
+
+#DEBHELPER#
+
+exit 0
