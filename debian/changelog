@@ -1,3 +1,9 @@
+llx-pam-configs (0.16.6) jammy; urgency=medium
+
+  * Initial release for Jammy
+
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Wed, 06 Sep 2023 12:20:28 +0200
+
 llx-pam-configs (0.6.6) focal; urgency=medium
 
   * Solved problems with split package. 
