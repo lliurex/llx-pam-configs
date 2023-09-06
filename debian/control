@@ -13,13 +13,3 @@ Conflicts: lightdm-running, lightdm-classroom
 Replaces: lightdm-running, lightdm-classroom
 Description: Lliurex pam-configs confiugrations
  Lliurex pam-configs custom confiugrations
-
-
-Package: llx-pam-configs-ldap
-Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, libpam-ldap, llx-pam-configs
-Conflicts: lightdm-running, lightdm-classroom, llx-pam-configs (<=0.5-1)
-Breaks: llx-pam-configs (<=0.5-1)
-Replaces: lightdm-running, lightdm-classroom, llx-pam-configs (<=0.5-1)
-Description: Lliurex pam-configs confiugrations
- Lliurex pam-configs custom confiugrations
