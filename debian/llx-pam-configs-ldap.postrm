@@ -1,0 +1,16 @@
+#! /bin/sh -e
+
+#edited in rules file
+
+
+if [ remove = "$1" -o abort-install = "$1" -o disappear = "$1" ];then
+
+		rm -rf /usr/share/pam-configs/ldap || true
+		dpkg-divert --package llx-pam-configs-ldap --remove --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/pam-configs/ldap
+
+fi;
+
+
+#DEBHELPER#
+
+exit 0

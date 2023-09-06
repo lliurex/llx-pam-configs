@@ -1,0 +1,45 @@
+#! /bin/sh -e
+
+#edited in rules file
+
+case "$1" in
+    install|upgrade)
+
+	if [ ! -d /usr/share/llx-pam-configs/diverted/ ]; then
+		mkdir -p /usr/share/llx-pam-configs/diverted/ || true
+	fi
+	x="$(dpkg-divert --listpackage /usr/share/pam-configs/ldap)"
+	if [ "$x" = "llx-pam-configs" ]; then
+		rm -rf /usr/share/pam-configs/ldap || true
+		dpkg-divert --package llx-pam-configs --remove --rename --divert /usr/share/llx-pam-configs/diverted/ldap.diverted /usr/share/pam-configs/ldap
+	
+	fi
+
+	if [ ! -e /usr/share/llx-pam-configs/diverted/pam_script.diverted  ]; then
+                dpkg-divert --package llx-pam-configs --add --rename --divert /usr/share/llx-pam-configs/diverted/pam_script.diverted /usr/share/pam-configs/pam_script
+        fi
+
+	
+	if [ ! -e /usr/share/llx-pam-configs/diverted/sddm.diverted  ]; then
+                dpkg-divert --package llx-pam-configs --add --rename --divert /usr/share/llx-pam-configs/diverted/sddm.diverted /etc/pam.d/sddm
+        fi
+
+
+    ;;
+
+    abort-upgrade)
+    ;;
+
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+
+
+
+
+#DEBHELPER#
+
+exit 0
