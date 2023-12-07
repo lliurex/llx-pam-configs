@@ -1,3 +1,9 @@
+llx-pam-configs (0.16.8) jammy; urgency=medium
+
+  * Fixed sddm diversion 
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Thu, 07 Dec 2023 09:24:32 +0100
+
 llx-pam-configs (0.16.7) jammy; urgency=medium
 
   * Fixed control to restore pkg for server
